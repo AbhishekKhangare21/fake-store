@@ -1,25 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./containers/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductDetails from "./containers/ProductDetail";
 import ProductListing from "./containers/ProductListing";
-import ProductDetail from "./containers/ProductDetail";
-import ProductComponent from "./containers/ProductComponent";
-import ErrorPage from "./containers/ErrorPage";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
+    <BrowserRouter>
+      <div className="App">
         <Routes>
-          <Route path="/" element={<ProductListing />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
-          <Route path="*" element={<ErrorPage />}>
-            404 Not Found
+          <Route path="/" element={<Header />}>
+            <Route index element={<ProductListing />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="*" element={<h1>404 Not Found !</h1>} />
           </Route>
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

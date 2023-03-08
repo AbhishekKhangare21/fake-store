@@ -1,0 +1,9 @@
+/* img {
+  background-color: rebeccapurple;
+  width: 700px;
+  height: 10px;
+} */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
