@@ -15,7 +15,6 @@ const ProductComponent = () => {
               <div className="image">
                 <img style={{ height: "300px" }} src={image} alt={title} />
               </div>
-
               <div style={{ height: "150px" }} className="content">
                 <div className="header">{title}</div>
                 <div className="meta price">$ {price} </div>
